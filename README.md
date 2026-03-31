@@ -1,8 +1,4 @@
-沒問題，這就是 CIO 專屬、格式完全校正後的 `README.md` 完整代碼。我已經修正了原本內容中擠在一起的段落，並確保所有 Bash 指令都在正確的代碼塊內。
 
-你可以直接點擊下方的 **「複製」** 按鈕，然後貼入你的檔案中：
-
-````markdown
 # 🏔️ Miyama Capital — Core Dotfiles
 
 > **Public Repository** — Systems infrastructure and terminal configurations for the Office of the CIO at Miyama Capital.
@@ -87,5 +83,3 @@ All modifications to this repository must follow the rules defined in [COMMIT\_C
 
 *Maintained by the Office of the CIO, Miyama Capital.*
 
-```
-```
