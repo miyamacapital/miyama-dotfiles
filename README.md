@@ -1,26 +1,91 @@
+沒問題，這就是 CIO 專屬、格式完全校正後的 `README.md` 完整代碼。我已經修正了原本內容中擠在一起的段落，並確保所有 Bash 指令都在正確的代碼塊內。
+
+你可以直接點擊下方的 **「複製」** 按鈕，然後貼入你的檔案中：
+
+````markdown
 # 🏔️ Miyama Capital — Core Dotfiles
 
-> **Public Repository** — Core development environment and dotfiles for Miyama Capital's systems infrastructure.
+> **Public Repository** — Systems infrastructure and terminal configurations for the Office of the CIO at Miyama Capital.
 
-## Overview
+---
 
-This repository contains the highly optimized terminal and editor configurations used by the Office of the CIO at Miyama Capital. 
+## 🎯 Philosophy
 
-It is designed with a "Systems > Hacking" philosophy: prioritizing pure speed, minimal latency, and native performance over bloated feature sets.
+This repository follows a **"Systems > Hacking"** philosophy. We prioritize:
+* **Latency over Bloat:** Minimalist setup for peak performance.
+* **Legacy Compatibility:** Seamlessly bridging a 15-year-old Vim workflow into the modern Neovim/Lua era.
+* **Portability:** Rapid environment restoration on any new macOS/Apple Silicon machine.
 
-## Components
+---
 
-* **`vimrc`**: A modernized Neovim configuration bridged from a 15-year legacy Vim setup. Features 24-bit True Color (Wombat256), Lazy.nvim asynchronous plugin management, and optimized macros for C/C++ & Python development.
-* **Terminal Environment**: Configured for next-generation terminal emulators (Ghostty / Warp) running on macOS Apple Silicon.
+## 📂 Repository Components
 
-## Installation (Neovim Bridge)
+| File / Folder | Description |
+| :--- | :--- |
+| **`vimrc`** | The core configuration (bridged from 15-year legacy setup). Optimized for C/C++ and Python. |
+| **`colors/`** | Contains `sway_wombat256.vim`, our custom visual signature. |
+| **`zshrc`** | Zsh configuration, path exports for Homebrew, and Neovim aliases. |
+| **`COMMIT_CONVENTION.md`** | Standardized guidelines for maintaining this repository. |
 
-To apply this configuration seamlessly to Neovim:
+---
+
+## 🛠️ Installation & Setup
+
+Follow these steps to restore the Miyama development environment on a new machine.
+
+### 1. Prerequisite: Clone the Repository
+```bash
+git clone git@github.com:miyamacapital/miyama-dotfiles.git ~/miyama-dotfiles
+cd ~/miyama-dotfiles
+````
+
+### 2\. Neovim Setup (The Bridge)
+
+We use a Lua bridge to load our optimized `vimrc`.
 
 ```bash
-# 1. Link the vimrc
-ln -s ~/path-to/miyama-dotfiles/vimrc ~/.vimrc
+# Create necessary directories
+mkdir -p ~/.config/nvim/colors
 
-# 2. Set up Neovim bridge
-mkdir -p ~/.config/nvim
+# Create the Lua bridge
 echo "vim.cmd('source ~/.vimrc')" > ~/.config/nvim/init.lua
+
+# Symlink the configurations
+ln -sf ~/miyama-dotfiles/vimrc ~/.vimrc
+ln -sf ~/miyama-dotfiles/colors/sway_wombat256.vim ~/.config/nvim/colors/sway_wombat256.vim
+```
+
+### 3\. Zsh & Terminal Setup
+
+Enable Apple Silicon pathing and set Neovim as the default editor.
+
+```bash
+# Symlink the zshrc
+ln -sf ~/miyama-dotfiles/zshrc ~/.zshrc
+
+# Apply changes immediately
+source ~/.zshrc
+```
+
+-----
+
+## ⌨️ Useful Keybindings (Leader is `,`)
+
+  * `,tt` : Toggle NERDTree (File Explorer)
+  * `,cc` : Open Error Console (Quickfix window)
+  * `,/`  : Clear search highlighting
+  * `Ctrl+j/k/h/l` : Navigate and maximize window splits
+  * `Shift+H/L` : Navigate tabs
+
+-----
+
+## 📜 Maintenance
+
+All modifications to this repository must follow the rules defined in [COMMIT\_CONVENTION.md](https://www.google.com/search?q=./COMMIT_CONVENTION.md).
+
+-----
+
+*Maintained by the Office of the CIO, Miyama Capital.*
+
+```
+```
