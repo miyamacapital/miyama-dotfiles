@@ -1,11 +1,11 @@
-" Vim color file
-" Original Maintainer:  Lars H. Nielsen (dengmao@gmail.com)
-" Last Change:  2010-07-23
-"
-" Converting for 256-color terminals by
-" Danila Bespalov (danila.bespalov@gmail.com)
-" with great help of tool by Wolfgang Frisch (xororand@frexx.de)
-" inspired by David Liang's version (bmdavll@gmail.com)
+" ==============================================================================
+" MIYAMA CAPITAL : Custom Color Scheme
+" ==============================================================================
+" Name:         sway_wombat256 (Miyama Edition)
+" Repository:   miyama-dotfiles/colors/
+" Based on:     Wombat by Lars H. Nielsen & Danila Bespalov
+" Optimized by: Kuan Hsun Wang (CIO)
+" ==============================================================================
 
 set background=dark
 
